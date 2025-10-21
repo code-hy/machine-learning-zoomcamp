@@ -45,7 +45,6 @@ Learn machine learning engineering from regression and classification to deploym
   - Peer interaction and community support
   - Opportunity to earn a certificate
 - **Register**: [Sign up here](https://airtable.com/shryxwLd0COOEaqXo)
-- **Calendar**: [Subscribe to updates](https://calendar.google.com/calendar/?cid=cGtjZ2tkbGc1OG9yb2lxa2Vwc2g4YXMzMmNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
 
 ### Self-Paced Learning (Available Anytime)
 
@@ -60,7 +59,7 @@ All materials are freely available on GitHub. You can:
 
 - Check [this repository content](https://github.com/DataTalksClub/machine-learning-zoomcamp) and star it (all materials live here).
 - Subscribe to [DataTalks.Club on YouTube](https://www.youtube.com/@DataTalksClub) and review the [course playlist](https://www.youtube.com/playlist?list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR).
-- Read the [frequently asked questions](https://docs.google.com/document/d/1LpPanc33QJJ6BSsyxVg-pWNMplal84TdZtq10naIhD8) to save time later.  
+- Read the [frequently asked questions](https://datatalks.club/faq/machine-learning-zoomcamp.html) to save time later.  
 - Join the [Slack course channel](https://DataTalks.Club/slack.html) for discussions.  
 - Join the [Telegram channel](https://t.me/mlzoomcamp) for announcements.  
 
@@ -251,7 +250,6 @@ Interested in sponsoring? Contact [alexey@datatalks.club](mailto:alexey@datatalk
 <a href="https://datatalks.club/slack.html">Join Slack Community</a> •
 <a href="https://us19.campaign-archive.com/home/?u=0d7822ab98152f5afc118c176&id=97178021aa">Newsletter</a> •
 <a href="http://lu.ma/dtc-events">Upcoming Events</a> •
-<a href="https://calendar.google.com/calendar/?cid=ZjhxaWRqbnEwamhzY3A4ODA5azFlZ2hzNjBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Google Calendar</a> •
 <a href="https://www.youtube.com/@DataTalksClub/featured">YouTube</a> •
 <a href="https://github.com/DataTalksClub">GitHub</a> •
 <a href="https://www.linkedin.com/company/datatalks-club/">LinkedIn</a> •
