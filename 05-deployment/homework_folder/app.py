@@ -13,7 +13,7 @@ with open('pipeline_v1.bin', 'rb') as f_in:
     pipeline = pickle.load(f_in)
 
 #Create FASTAPI app
-app = FASTAPI()
+app = FastAPI()
 
 class Lead(BaseModel):
     lead_source:str
