@@ -8,7 +8,18 @@ from fastapi.responses import JSONResponse
 import logging
 import uvicorn
 
+### fast api comes with pydantic for data validation built-in
 
+### to do data profiling on the input data
+
+### for c in categorical:
+###    print(df[c].value_counts())
+###    print()
+
+### for n in numerical:
+###    print(df[n].describe())
+###    print()
+### paste the output into Chatgpt to get the pydantic model below
 
 class Customer(BaseModel):
     gender: Literal["male", "female"]
@@ -93,4 +104,6 @@ if __name__ == "__main__":
 
 
 
-
+### example input for prediction endpoint - open up a new terminal
+### paste the following curl command to test the prediction endpoint
+### curl -s -X POST -H "Content-Type: application/json" -d '{"gender":"female","seniorcitizen":0,"partner":"yes","dependents":"no","phoneservice":"no","multiplelines":"no_phone_service","internetservice":"dsl","onlinesecurity":"no","onlinebackup":"yes","deviceprotection":"no","techsupport":"no","streamingtv":"no","streamingmovies":"no","contract":"month-to-month","paperlessbilling":"yes","paymentmethod":"electronic_check","tenure":1,"monthlycharges":29.85,"totalcharges":29.85}' http://localhost:9696/predict
