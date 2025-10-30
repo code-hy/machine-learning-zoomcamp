@@ -8,7 +8,11 @@ ENV PATH="/code/.venv/bin:$PATH"
 COPY "pyproject.toml" "uv.lock" ".python-version" ./
 RUN uv sync --locked
 
-COPY "predict.py" "model.bin" ./
+# Copy application files
+COPY "train.py" "predict.py" ./
+
+# Run training during image build to create model.bin inside the image
+RUN python3 train.py
 
 EXPOSE 9696
 

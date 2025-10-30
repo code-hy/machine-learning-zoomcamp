@@ -3,7 +3,9 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse
+import logging
 import uvicorn
 
 
@@ -42,11 +44,18 @@ class PredictResponse(BaseModel):
 
 app = FastAPI(title="customer-churn-prediction")
 
-with open('model.bin', 'rb') as f_in:
-    pipeline = pickle.load(f_in)
+# Load model.bin safely. If the file is missing or loading fails, keep pipeline=None
+pipeline = None
+try:
+    with open('model.bin', 'rb') as f_in:
+        pipeline = pickle.load(f_in)
+except Exception as e:
+    logging.warning(f"Could not load model.bin: {e}")
 
 
 def predict_single(customer):
+    if pipeline is None:
+        raise HTTPException(status_code=503, detail='Model is not loaded')
     result = pipeline.predict_proba(customer)[0, 1]
     return float(result)
 
@@ -59,6 +68,24 @@ def predict(customer: Customer) -> PredictResponse:
         churn_probability=prob,
         churn=prob >= 0.5
     )
+
+
+@app.get("/")
+def root():
+    """Simple root endpoint to confirm the service is running."""
+    return JSONResponse({
+        "message": "customer-churn-prediction service running",
+        "predict": "POST /predict",
+    })
+
+
+@app.get("/health")
+def health():
+    """Health endpoint reporting whether the model is loaded."""
+    return {
+        "status": "ok",
+        "model_loaded": pipeline is not None,
+    }
 
 
 if __name__ == "__main__":
